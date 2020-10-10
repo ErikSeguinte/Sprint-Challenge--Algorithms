@@ -5,6 +5,8 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
 
+    # base cases
+
     # blank string
     if len(word) <= 0 :
         return 0
