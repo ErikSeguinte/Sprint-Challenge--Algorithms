@@ -113,6 +113,10 @@ class SortingRobot:
                 self.swap_item()
                 self.move_right()
                 self.swap_item()
+
+            # Return last item if item in hand
+            if self.compare_item() is None:
+                self.swap_item()
             while self.can_move_left():
                 self.move_left()
 
