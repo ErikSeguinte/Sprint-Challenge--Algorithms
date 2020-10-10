@@ -2,13 +2,17 @@
 
 ## Exercise I
 
-a)
+a) O(N³)
+  * The loop will continue to run a number of times equal to N cubed.
 
 
-b)
+b) O(N²)
+  * Includes a nested loop that runs through each element for every interation of the outer loop
 
 
-c)
+c) O(1)
+  * The size of the input has no influence on the runtime of this function.
+    No matter the size of the input, it will run at the same speed.
 
 ## Exercise II
 
