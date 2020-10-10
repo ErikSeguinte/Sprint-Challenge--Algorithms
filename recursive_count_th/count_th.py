@@ -17,6 +17,7 @@ def count_th(word):
     if len(word) == 2:
         if word == "th":
             return 1
+        else: return 0
 
     # If word contains more than 2 letters, break word in half and recurse into them
     l = len(word) //2
@@ -24,7 +25,7 @@ def count_th(word):
     back = word[l:]
     th = 0
     th += count_th(front)
-    th =+ count_th(back)
+    th += count_th(back)
 
     # after breaking, new "th" may be found at the border of front and back
     candidate = front[-1] + back[0]
