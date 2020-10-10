@@ -104,15 +104,15 @@ class SortingRobot:
 
         self.set_light_on()
 
+        if self.can_move_right():
+            self.swap_item()
         while self.light_is_on():
             self.set_light_off()
             while self.can_move_right():
-                self.swap_item()
                 self.move_right()
                 if self.compare_item() == 1:
                     self.swap_item()
                     self.set_light_on()
-                self.move_right()
 
             # Robot should now have the smallest item to the right of where it first picked up an item.
             # Return smallest item to where the first item was picked up
@@ -128,7 +128,9 @@ class SortingRobot:
 
             if self.can_move_right():
                 self.move_right()
-                if not self.can_move_right():
+                if self.can_move_right():
+                    self.swap_item()
+                else:
                     break
 
 
