@@ -97,7 +97,39 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        self._bubble_sort()
+        # self._bubble_sort()
+        self.selection_sort()
+
+    def selection_sort(self):
+
+        self.set_light_on()
+
+        while self.light_is_on():
+            self.set_light_off()
+            while self.can_move_right():
+                self.swap_item()
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_right()
+
+            # Robot should now have the smallest item to the right of where it first picked up an item.
+            # Return smallest item to where the first item was picked up
+            if self.compare_item() == 1:
+                self.swap_item()
+                self.set_light_on()
+
+            while True:
+                if self.compare_item() is None:
+                    self.swap_item()
+                    break
+                self.move_left()
+
+            if self.can_move_right():
+                self.move_right()
+                if not self.can_move_right():
+                    break
 
 
     def _bubble_sort(self):
