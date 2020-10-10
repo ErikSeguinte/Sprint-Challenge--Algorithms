@@ -97,8 +97,12 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+        self._bubble_sort()
 
-        ## Implementation of Bubble sort
+
+    def _bubble_sort(self):
+    ## Implementation of Bubble sort
+    ## Passes main tests
 
         self.set_light_on()
         while self.light_is_on():
@@ -119,6 +123,8 @@ class SortingRobot:
                 self.swap_item()
             while self.can_move_left():
                 self.move_left()
+
+
 
 
 
