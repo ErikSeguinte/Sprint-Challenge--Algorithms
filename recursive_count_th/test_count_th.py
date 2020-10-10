@@ -12,10 +12,10 @@ class Test(unittest.TestCase):
         count = count_th(self.word)
         self.assertEqual(0, count)
 
-    # def test_count_th_single(self):
-    #     self.word = "abcthxyz"
-    #     count = count_th(self.word)
-    #     self.assertEqual(1, count)
+    def test_count_th_single(self):
+        self.word = "abcthxyz"
+        count = count_th(self.word)
+        self.assertEqual(1, count)
     #
     # def test_count_th_multiple(self):
     #     self.word = "abcthefthghith"
